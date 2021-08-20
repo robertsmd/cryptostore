@@ -28,8 +28,13 @@ services:
         max-size: "2000k"
         max-file: "10"
     container_name: mongo
+    volumes:
+      - db-data:/data
     image: mongo:4.4.1-bionic
     ports:
       - '37017:27017'
     expose:
       - 27017
+
+volumes:
+  db-data:
